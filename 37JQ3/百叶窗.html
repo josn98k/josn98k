@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.screen{
+				width:1200px;
+				margin: 0 auto;
+				border: 1px solid violet;
+				position: relative;
+			}
+			.screen>li{
+				list-style: none;
+				overflow: hidden;
+				/*position: absolute;*/
+				top: 0;
+				left: 0;
+				width: 200px;
+				height: 600px;
+				border: 1px solid black;
+				float: left;
+				
+			}
+			.screen img{
+				/*height: 600px;*/
+				border: 0 none;
+				vertical-align: top;
+				width: 600px;
+			}
+		</style>
+		<script src="../36JQuery2/JQUERY/jquery-1.12.4.js"></script>
+	</head>
+	<body>
+		<div class="screen">
+			<li><img src="img/1.jpg" /></li>
+			<li><img src="img/2.jpg" /></li>
+			<li><img src="img/3.jpg" /></li>
+			<li><img src="img/4.jpg" /></li>
+			<li><img src="img/5.jpg" /></li>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	$(function(){
+		$(".screen>li").hover(function(){
+			$(this).stop().animate({"width":600}).siblings().stop().animate({"width":100}),function(){
+				$(".screen>li").stop().animate({"width":200})
+			}
+		})
+	})
+</script>
